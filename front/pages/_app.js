@@ -8,7 +8,7 @@ import withRedux from 'next-redux-wrapper'; // store를 NodeBird에게 props로 
 import { createStore, compose, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import reducer from '../reducers';
-import sagaMiddleware from '../sagas/middleware';
+import createSagaiddleware from 'redux-saga';
 import rootSaga from '../sagas';
 
 const NodeBird = ({ Component, store }) => {
@@ -37,6 +37,7 @@ export default withRedux((initialState, options) => {
     // const store = createStore(reducer, initialState);
     // 여기에 store 커스터마이징
     // 미들웨어는 액션과 스토어 사이에서 동작
+    const sagaMiddleware = createSagaiddleware();
     const middlewares = [sagaMiddleware];
     const enhancer = process.env.NODE_ENV === 'production'  // NODE_ENV(실제 서비스 인지 구분하는 애), production(실제서비스)
         ? compose(applyMiddleware(...middlewares),)

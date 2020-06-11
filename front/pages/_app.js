@@ -28,12 +28,12 @@ const NodeBird = ({ Component, store }) => {
 };
 
 NodeBird.prototype = {
-    Component: PropTypes.elementType, // elementType이 아닌걸 받으면 콘솔에 error을 띄운다
-    store: PropTypes.object,
+    Component: PropTypes.elementType.isRequired, // elementType이 아닌걸 받으면 콘솔에 error을 띄운다
+    store: PropTypes.object.isRequired, // isRequired 프롭스에 꼭 들어가야 한다. 안들어가면 에러
 };
 
 ////////////////////////////////////////////////////////////
-export default withRedux((initialState, options) => {
+const configrationStore = (initialState, options) => {
     // const store = createStore(reducer, initialState);
     // 여기에 store 커스터마이징
     // 미들웨어는 액션과 스토어 사이에서 동작
@@ -49,5 +49,7 @@ export default withRedux((initialState, options) => {
     sagaMiddleware.run(rootSaga); 
 
     return store;
-})(NodeBird);
+}
+
+export default withRedux(configrationStore)(NodeBird);
 ////////////////////////////////////////////////////////////

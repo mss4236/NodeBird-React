@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { Form, Input, Button } from 'antd';
 import Link from 'next/link';
 import { useDispatch, useSelector } from 'react-redux';
-import { loginAction } from '../reducers/user';
+import { loginRequestAction } from '../reducers/user';
 
 // 커스텀 훅스
 const useInput = (initValue = null) => {
@@ -21,7 +21,7 @@ const LoginForm = () => {
 
     const onsubmitForm = useCallback((e) => {
         e.preventDefault();
-        dispatch(loginAction);
+        dispatch(loginRequestAction);
     }, [userId, userPassword]);
 
     return (

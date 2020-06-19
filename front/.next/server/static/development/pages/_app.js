@@ -356,14 +356,14 @@ var LoginForm = function LoginForm() {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 37,
-      columnNumber: 7
+      columnNumber: 13
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 38,
-      columnNumber: 9
+      columnNumber: 17
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
     htmlFor: "user-id",
@@ -371,14 +371,14 @@ var LoginForm = function LoginForm() {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 39,
-      columnNumber: 11
+      columnNumber: 21
     }
   }, "\uC544\uC774\uB514"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 40,
-      columnNumber: 11
+      columnNumber: 21
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
     name: "user-id",
@@ -388,14 +388,14 @@ var LoginForm = function LoginForm() {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 41,
-      columnNumber: 11
+      columnNumber: 21
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 43,
-      columnNumber: 9
+      columnNumber: 17
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
     htmlFor: "user-password",
@@ -403,14 +403,14 @@ var LoginForm = function LoginForm() {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 44,
-      columnNumber: 11
+      columnNumber: 21
     }
   }, "\uBE44\uBC00\uBC88\uD638"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 45,
-      columnNumber: 11
+      columnNumber: 21
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
     name: "user-password",
@@ -421,14 +421,14 @@ var LoginForm = function LoginForm() {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 46,
-      columnNumber: 11
+      columnNumber: 21
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
-      columnNumber: 9
+      lineNumber: 48,
+      columnNumber: 17
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Button"], {
     type: "primary",
@@ -437,30 +437,30 @@ var LoginForm = function LoginForm() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
-      columnNumber: 11
+      lineNumber: 49,
+      columnNumber: 21
     }
   }, "\uB85C\uADF8\uC778"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
     href: "/signup",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
-      columnNumber: 11
+      lineNumber: 52,
+      columnNumber: 21
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
-      columnNumber: 13
+      lineNumber: 53,
+      columnNumber: 25
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Button"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
-      columnNumber: 15
+      lineNumber: 54,
+      columnNumber: 29
     }
   }, "\uD68C\uC6D0\uAC00\uC785"))))));
 };
@@ -1694,20 +1694,33 @@ var initialState = (_initialState = {
   imagePaths: [],
   // 미리보기 이미지 경로들
   mainPosts: [{
+    id: 1,
     User: {
       id: 1,
       nickname: "pkm"
     },
     content: "까불지마",
-    img: ""
+    img: "",
+    Comments: []
   }]
-}, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_initialState, "imagePaths", []), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_initialState, "addPostError", false), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_initialState, "isAddingPost", false), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_initialState, "postAdded", false), _initialState);
+}, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_initialState, "imagePaths", []), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_initialState, "addPostError", false), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_initialState, "isAddingPost", false), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_initialState, "postAdded", false), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_initialState, "isAddingComment", false), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_initialState, "addCommentErrorReason", ""), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_initialState, "commentAdded", false), _initialState);
 var dummyPost = {
+  id: 2,
   User: {
-    id: "cokohp",
+    id: 1,
     nickname: "깽"
   },
-  content: "나는 더미입니다."
+  content: "나는 더미입니다.",
+  Comments: []
+};
+var dummyComments = {
+  id: 1,
+  User: {
+    id: 1,
+    nickname: 2
+  },
+  createdAt: new Date(),
+  content: "더미 댓글입니다."
 }; // 액션 이름 (비동기 처리를 해야하는 경우 REQUEST, SUCCESS, FAILURE 3가지로 나눴음)
 // 메인포스트 로딩하는 액션
 
@@ -1880,17 +1893,43 @@ var reducer = function reducer() {
 
     case ADD_COMMENT_REQUEST:
       {
-        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, state);
+        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, state, {
+          isAddingComment: true,
+          addCommentErrorReason: "",
+          commentAdded: false
+        });
       }
 
     case ADD_COMMENT_SUCCESS:
       {
-        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, state);
+        // 댓글을 추가할 게시글을 찾아야함
+        var postIndex = state.mainPosts.findIndex(function (v) {
+          return v.id === action.data.postId;
+        });
+        var post = state.mainPosts[postIndex]; // 불변성 확보
+        //const Comments = [...post.Comments, action.data.comment]; // 댓글 넣음
+
+        var Comments = [].concat(Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(post.Comments), [dummyComments]); // 댓글 넣음
+
+        var mainPosts = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(state.mainPosts); // mainPosts 불변성 확보
+
+
+        mainPosts[postIndex] = Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, post, {
+          Comments: Comments
+        });
+        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, state, {
+          commentAdded: true,
+          mainPosts: Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(mainPosts),
+          isAddingComment: false
+        });
       }
 
     case ADD_COMMENT_FAILURE:
       {
-        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, state);
+        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, state, {
+          addCommentErrorReason: action.error,
+          isAddingComment: false
+        });
       }
     // 게시글에 댓글 불러옴
 
@@ -2258,10 +2297,12 @@ __webpack_require__.r(__webpack_exports__);
 
 var _marked = /*#__PURE__*/_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(addPost),
     _marked2 = /*#__PURE__*/_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(watchAddPost),
-    _marked3 = /*#__PURE__*/_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(postSaga);
+    _marked3 = /*#__PURE__*/_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(addComment),
+    _marked4 = /*#__PURE__*/_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(watchAddComment),
+    _marked5 = /*#__PURE__*/_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(postSaga);
 
 
-
+ // Post
 
 function addPostAPI() {}
 
@@ -2319,22 +2360,80 @@ function watchAddPost() {
       }
     }
   }, _marked2);
-}
+} // Comments
 
-function postSaga() {
-  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function postSaga$(_context3) {
+
+function addCommentAPI() {}
+
+function addComment(action) {
+  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function addComment$(_context3) {
     while (1) {
       switch (_context3.prev = _context3.next) {
         case 0:
-          _context3.next = 2;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["all"])([Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["fork"])(watchAddPost)]);
+          _context3.prev = 0;
+          _context3.next = 3;
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["delay"])(2000);
 
-        case 2:
+        case 3:
+          _context3.next = 5;
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
+            type: _reducers_post__WEBPACK_IMPORTED_MODULE_2__["ADD_COMMENT_SUCCESS"],
+            data: {
+              postId: action.data.postId
+            }
+          });
+
+        case 5:
+          _context3.next = 11;
+          break;
+
+        case 7:
+          _context3.prev = 7;
+          _context3.t0 = _context3["catch"](0);
+          _context3.next = 11;
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
+            type: _reducers_post__WEBPACK_IMPORTED_MODULE_2__["ADD_COMMENT_FAILURE"],
+            error: _context3.t0
+          });
+
+        case 11:
         case "end":
           return _context3.stop();
       }
     }
-  }, _marked3);
+  }, _marked3, null, [[0, 7]]);
+}
+
+function watchAddComment() {
+  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function watchAddComment$(_context4) {
+    while (1) {
+      switch (_context4.prev = _context4.next) {
+        case 0:
+          _context4.next = 2;
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["takeLatest"])(_reducers_post__WEBPACK_IMPORTED_MODULE_2__["ADD_COMMENT_REQUEST"], addComment);
+
+        case 2:
+        case "end":
+          return _context4.stop();
+      }
+    }
+  }, _marked4);
+}
+
+function postSaga() {
+  return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function postSaga$(_context5) {
+    while (1) {
+      switch (_context5.prev = _context5.next) {
+        case 0:
+          _context5.next = 2;
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["all"])([Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["fork"])(watchAddPost), Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["fork"])(watchAddComment)]);
+
+        case 2:
+        case "end":
+          return _context5.stop();
+      }
+    }
+  }, _marked5);
 }
 
 /***/ }),

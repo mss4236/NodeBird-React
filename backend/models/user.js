@@ -1,8 +1,6 @@
-const { sequelize } = require(".");
-
 module.exports = (sequelize, DataTypes) => {
     const User = sequelize.define(
-        "User",
+        "User", // 앞에를 대문자로 쓰면 테이블이 생성될때 users(앞부분은 소문자가되고 s가 붙음)가 된다
         {
             nickname: {
                 type: DataTypes.STRING(20),
@@ -21,13 +19,18 @@ module.exports = (sequelize, DataTypes) => {
         {
             // 이거 2개 적어줘야 한글 적용됨
             charset: "utf8",
-            collate: "utf8-_general_ci",
+            collate: "utf8_general_ci",
         }
     );
 
     User.associate = (db) => {
-        db.User.hasMany(db.Post); // User(사용자)는 Post(게시글)를 여러개 가질 수 있다
+        db.User.hasMany(db.Post, { as: "Posts" }); // User(사용자)는 Post(게시글)를 여러개 가질 수 있다
         db.User.hasMany(db.Comment); // User(사용자)는 Comment(댓글)를 여러개 가질 수 있다
+        db.User.belongsToMany(db.Post, { through: "Like" });
+
+        // 같은거에 다대다 관계일 경우 2개 적어주고 as로 구분해줌
+        db.User.belongToMany(db.User, { through: "Follow", as: "Followers" });
+        db.User.belongToMany(db.User, { through: "Follow", as: "Followings" });
     };
 
     return User;

@@ -36,10 +36,10 @@ const SignUp = () => {
                 return setTermError(true);
             }
 
-            dispatch(
+            return dispatch(
                 userSignUpRequestAction({
-                    id,
-                    nick,
+                    userId: id,
+                    nickname: nick,
                     password,
                 })
             );

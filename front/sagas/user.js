@@ -30,14 +30,13 @@ function* watchLogin() {
 
 // watchSignUp()에서 SIGN_UP_REQUEST가 dispatch되면 signUp를 실행하고,
 // signUp()에서 서버를 호출하고[signUpAPI()] 결과에 따라 dispatch(put)를 한다
-function signUpAPI() {
-    return axios.post("/login");
+function signUpAPI(signUpData) {
+    return axios.post("http://localhost:3065/api/user/", signUpData);
 }
 
-function* signUp() {
+function* signUp(action) {
     try {
-        //yield call(signUpAPI);
-        yield delay(2000);
+        yield call(signUpAPI, action.data);
         yield put({
             type: SIGN_UP_SUCCESS,
         });

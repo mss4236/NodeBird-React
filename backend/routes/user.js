@@ -1,4 +1,5 @@
 const express = require("express");
+const bcrypt = require("bcrypt");
 const router = express.Router();
 const db = require("../models");
 
@@ -10,7 +11,7 @@ router.post("/", async (req, res) => {
     try {
         const exUser = await db.User.findOne({
             where: {
-                userId: req.body.id,
+                userId: req.body.userId,
             }, // 찾고 싶은 조건
         }); // 해당 유저가 있는지 확인, findOne는 하나만 찾는거임, 비동기 promise이기 때문에 await 붙여줘야함
         if (exUser) {

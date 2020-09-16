@@ -2527,18 +2527,18 @@ function watchLogin() {
 // signUp()에서 서버를 호출하고[signUpAPI()] 결과에 따라 dispatch(put)를 한다
 
 
-function signUpAPI() {
-  return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post("/login");
+function signUpAPI(signUpData) {
+  return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post("http://localhost:3065/api/user/", signUpData);
 }
 
-function signUp() {
+function signUp(action) {
   return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function signUp$(_context3) {
     while (1) {
       switch (_context3.prev = _context3.next) {
         case 0:
           _context3.prev = 0;
           _context3.next = 3;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["delay"])(2000);
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["call"])(signUpAPI, action.data);
 
         case 3:
           _context3.next = 5;

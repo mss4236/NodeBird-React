@@ -1,9 +1,8 @@
 // 회원가입 페이지
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { Form, Input, Checkbox, Button } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { userSignUpRequestAction } from "../reducers/user";
-import { useEffect } from "react";
 import Router from "next/router";
 
 const SignUp = () => {
@@ -36,7 +35,7 @@ const SignUp = () => {
                 return setTermError(true);
             }
 
-            return dispatch(
+            dispatch(
                 userSignUpRequestAction({
                     userId: id,
                     nickname: nick,
@@ -44,7 +43,7 @@ const SignUp = () => {
                 })
             );
         },
-        [password, passwordCheck, term]
+        [id, nick, password, passwordCheck, term]
     );
 
     const onChangeId = useCallback(

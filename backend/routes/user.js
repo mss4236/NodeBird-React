@@ -2,6 +2,7 @@ const express = require("express");
 const bcrypt = require("bcrypt");
 const router = express.Router();
 const db = require("../models");
+const passport = require("passport");
 
 // API는 다른 서비스가 내 서비스의 기능을 실행할 수 있게 열어둔 창구(프론트 엔드 서버와 백엔드 서버가 따로 있는데 프론트 엔드 서버가 백엔드 서버를 사용할 수 있게?)
 router.get("/", (req, res) => {}); // /api/user/
@@ -30,8 +31,32 @@ router.post("/", async (req, res) => {
     }
 });
 router.get("/:id/", (req, res) => {}); // 남의 정보 가져오는 것, :id는 req.params.id로 가져올 수 있다 // ex) /3 이면 id가 3인 유저정보를 가져오겠다는 의미
-router.post(".logout/", (req, res) => {});
-router.post("/login/", (req, res) => {});
+router.post("/logout/", (req, res) => {
+    req.logOut();
+    req.session.destroy();
+    res.send("logOut 성공");
+});
+router.post("/login/", (req, res, next) => {
+    passport.authenticate("local", (err, user, info) => {
+        if (err) {
+            console.error(err);
+            return next(err); // express가 에러 처리함
+        }
+        if (info) {
+            return res.status(401).send(info.reason);
+        }
+        // 사용자정보(user)로 로그인 시킴, 로그인하면 서버쪽에 세션이랑 쿠키 저장됨
+        return req.logIn(user, (loginErr) => {
+            // req.logIn 실행하면 serializeUser가 실행됨
+            if (loginErr) {
+                return next(loginErr);
+            }
+            const filteredUser = Object.assign({}, user.toJSON()); // user 얕은 복사
+            delete filteredUser.password; // password는 지움
+            return res.json(filteredUser); // password 지운 사용자 정보를 json형태로 프론트에 보내줌
+        });
+    })(req, res, next); // (err, user, info)는 done에서 (서버쪽에러, 성공했을때, 로직상에러) 와 같음
+}); //POST /api/user/login
 router.get("/:id/follow/", (req, res) => {});
 router.post("/:id/follow/", (req, res) => {});
 router.delete("/:id/follow/", (req, res) => {});

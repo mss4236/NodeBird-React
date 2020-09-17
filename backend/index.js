@@ -6,6 +6,7 @@ const expressSession = require("express-session");
 const dotenv = require("dotenv");
 const passport = require("passport");
 
+const passportConfig = require("./passport");
 const db = require("./models");
 const port = 3065;
 
@@ -16,6 +17,7 @@ const postsAPIRouter = require("./routes/posts");
 dotenv.config();
 const app = express();
 db.sequelize.sync();
+passportConfig();
 
 // req.body.  을 사용하려면 이거 2줄 추가
 app.use(express.json()); // json형식의 데이터를 처리할 수 있음

@@ -1,25 +1,18 @@
 // user reducer ((((((((((( store은 정확하게는 state, action, reducer가 합쳐진 것 )))))))))))
 
-const dummyUser = {
-  nickname: "PKM",
-  Post: [],
-  Followings: [],
-  Followers: [],
-};
-
 // store
 export const initialState = {
-  isLoggedIn: false, // 로그인 여부
-  isLoggingOut: false, // 로그아웃 시도중
-  isLoggingIn: false, // 로그인 시도중
-  logInErrorReason: "", // 로그인 에러 사유
-  signedUp: false, // 회원가입 성공
-  isSigningUp: false, // 회원가입 시도중
-  singUpErrorReason: "", // 회원가입 실패 사유
-  me: null, // 내 정보
-  followingList: [], // 팔로잉 리스트
-  followerList: [], // 팔로워 리스트
-  userInfo: null, // 남의 정보
+    isLoggedIn: false, // 로그인 여부
+    isLoggingOut: false, // 로그아웃 시도중
+    isLoggingIn: false, // 로그인 시도중
+    logInErrorReason: "", // 로그인 에러 사유
+    signedUp: false, // 회원가입 성공
+    isSigningUp: false, // 회원가입 시도중
+    singUpErrorReason: "", // 회원가입 실패 사유
+    me: null, // 내 정보
+    followingList: [], // 팔로잉 리스트
+    followerList: [], // 팔로워 리스트
+    userInfo: null, // 남의 정보
 };
 
 // action의 이름들
@@ -69,118 +62,118 @@ export const ADD_POST_TO_ME = "ADD_POST_TO_ME";
 // 실제 액션들
 // 로그인
 export const loginRequestAction = (data) => ({
-  type: LOG_IN_REQUEST,
-  data,
+    type: LOG_IN_REQUEST,
+    data,
 });
 export const loginSuccessAction = {
-  type: LOG_IN_SUCCESS,
+    type: LOG_IN_SUCCESS,
 };
 export const loginFailureAction = {
-  type: LOG_IN_FAILURE,
-  //error: ,
+    type: LOG_IN_FAILURE,
+    //error: ,
 };
 
 export const logoutRequestAction = {
-  type: LOG_OUT_REQUEST,
-  user: null,
+    type: LOG_OUT_REQUEST,
+    user: null,
 };
 export const logoutSuccessAction = {
-  type: LOG_OUT_SUCCESS,
+    type: LOG_OUT_SUCCESS,
 };
 export const logoutFailureAction = {
-  type: LOG_OUT_FAILURE,
+    type: LOG_OUT_FAILURE,
 };
 
 export const userSignUpRequestAction = (data) => ({
-  // action에 넣을 데이터가 동적인 경우에는 action을 함수로 만든다 ㅇㅋ?
-  type: SIGN_UP_REQUEST,
-  data,
+    // action에 넣을 데이터가 동적인 경우에는 action을 함수로 만든다 ㅇㅋ?
+    type: SIGN_UP_REQUEST,
+    data,
 });
 export const userSignUpSucessAction = {
-  type: SIGN_UP_SUCCESS,
+    type: SIGN_UP_SUCCESS,
 };
 export const userSignUpFailureAction = {
-  type: SIGN_UP_FAILURE,
+    type: SIGN_UP_FAILURE,
 };
 
 // reducer
 const reducer = (state = initialState, action) => {
-  switch (action.type) {
-    // LOG_IN 관련
-    case LOG_IN_REQUEST: {
-      return {
-        ...state,
-        isLoggingIn: true,
-        logInErrorReason: "",
-      };
+    switch (action.type) {
+        // LOG_IN 관련
+        case LOG_IN_REQUEST: {
+            return {
+                ...state,
+                isLoggingIn: true,
+                logInErrorReason: "",
+            };
+        }
+        case LOG_IN_SUCCESS: {
+            return {
+                ...state,
+                isLoggingIn: false,
+                isLoggedIn: true,
+                me: action.data,
+            };
+        }
+        case LOG_IN_FAILURE: {
+            return {
+                ...state,
+                isLoggingIn: false,
+                isLoggedIn: false,
+                logInErrorReason: action.error,
+                me: null,
+            };
+        }
+        // LOG_OUT 관련
+        case LOG_OUT_REQUEST: {
+            return {
+                ...state,
+                isLoggingOut: true,
+            };
+        }
+        case LOG_OUT_SUCCESS: {
+            return {
+                ...state,
+                isLoggingOut: false,
+                isLoggedIn: false,
+                me: null,
+            };
+        }
+        case LOG_OUT_FAILURE: {
+            return {
+                ...state,
+                isLoggingOut: false,
+            };
+        }
+        // SIGN_UP 관련
+        case SIGN_UP_REQUEST: {
+            return {
+                ...state,
+                isSigningUp: true,
+                signedUp: false,
+                singUpErrorReason: "",
+            };
+        }
+        case SIGN_UP_SUCCESS: {
+            return {
+                ...state,
+                isSigningUp: false,
+                signedUp: true,
+            };
+        }
+        case SIGN_UP_FAILURE: {
+            return {
+                ...state,
+                isSigningUp: false,
+                singUpErrorReason: action.error,
+            };
+        }
+        default: {
+            return {
+                ...state,
+            };
+        }
     }
-    case LOG_IN_SUCCESS: {
-      return {
-        ...state,
-        isLoggingIn: false,
-        isLoggedIn: true,
-        me: dummyUser,
-      };
-    }
-    case LOG_IN_FAILURE: {
-      return {
-        ...state,
-        isLoggingIn: false,
-        isLoggedIn: false,
-        logInErrorReason: action.error,
-        me: null,
-      };
-    }
-    // LOG_OUT 관련
-    case LOG_OUT_REQUEST: {
-      return {
-        ...state,
-        isLoggingOut: true,
-      };
-    }
-    case LOG_OUT_SUCCESS: {
-      return {
-        ...state,
-        isLoggingOut: false,
-        isLoggedIn: false,
-        me: null,
-      };
-    }
-    case LOG_OUT_FAILURE: {
-      return {
-        ...state,
-        isLoggingOut: false,
-      };
-    }
-    // SIGN_UP 관련
-    case SIGN_UP_REQUEST: {
-      return {
-        ...state,
-        isSigningUp: true,
-        signedUp: false,
-        singUpErrorReason: "",
-      };
-    }
-    case SIGN_UP_SUCCESS: {
-      return {
-        ...state,
-        isSigningUp: false,
-        signedUp: true,
-      };
-    }
-    case SIGN_UP_FAILURE: {
-      return {
-        ...state,
-        isSigningUp: false,
-        singUpErrorReason: action.error,
-      };
-    }
-    default: {
-      return {
-        ...state,
-      };
-    }
-  }
 };
 
 export default reducer;

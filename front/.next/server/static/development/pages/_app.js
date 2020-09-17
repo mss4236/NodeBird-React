@@ -343,7 +343,7 @@ var LoginForm = function LoginForm() {
   var onsubmitForm = Object(react__WEBPACK_IMPORTED_MODULE_1__["useCallback"])(function (e) {
     e.preventDefault();
     dispatch(Object(_reducers_user__WEBPACK_IMPORTED_MODULE_5__["loginRequestAction"])({
-      id: userId,
+      userId: userId,
       password: userPassword
     }));
   }, [userId, userPassword]);
@@ -514,59 +514,59 @@ var UserProfile = function UserProfile() {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 20,
-        columnNumber: 9
+        columnNumber: 17
       }
     }, "\uC9F9\uC9F9", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 22,
-        columnNumber: 11
+        columnNumber: 21
       }
-    }), me.Post.length), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    }), 0), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       key: "followings",
       __self: _this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 25,
-        columnNumber: 9
+        columnNumber: 17
       }
     }, "\uD314\uB85C\uC789", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 27,
-        columnNumber: 11
+        columnNumber: 21
       }
-    }), me.Followings.length), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    }), 0), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       key: "follower",
       __self: _this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 30,
-        columnNumber: 9
+        columnNumber: 17
       }
     }, "\uD314\uB85C\uC6CC", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 32,
-        columnNumber: 11
+        columnNumber: 21
       }
-    }), me.Followers.length)],
+    }), 0)],
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 18,
-      columnNumber: 5
+      columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_1__["Card"].Meta, {
     avatar: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_1__["Avatar"], {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38,
-        columnNumber: 17
+        lineNumber: 37,
+        columnNumber: 32
       }
     }, me.nickname[0]),
     title: me.nickname,
@@ -574,7 +574,7 @@ var UserProfile = function UserProfile() {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 37,
-      columnNumber: 7
+      columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
     type: "primary",
@@ -583,8 +583,8 @@ var UserProfile = function UserProfile() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
-      columnNumber: 7
+      lineNumber: 38,
+      columnNumber: 13
     }
   }, "\uB85C\uADF8\uC544\uC6C3"));
 };
@@ -2038,13 +2038,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
 
 // user reducer ((((((((((( store은 정확하게는 state, action, reducer가 합쳐진 것 )))))))))))
-var dummyUser = {
-  nickname: "PKM",
-  Post: [],
-  Followings: [],
-  Followers: []
-}; // store
-
+// store
 var initialState = {
   isLoggedIn: false,
   // 로그인 여부
@@ -2162,7 +2156,7 @@ var reducer = function reducer() {
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
           isLoggingIn: false,
           isLoggedIn: true,
-          me: dummyUser
+          me: action.data
         });
       }
 
@@ -2468,45 +2462,51 @@ var _marked = /*#__PURE__*/_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_
 
 
 
+axios__WEBPACK_IMPORTED_MODULE_3___default.a.defaults.baseURL = "http://localhost:3065/api"; // 공통부분
 
-function loginAPI() {// 서버에 요청을 보내는 부분
+function loginAPI(loginData) {
+  // 서버에 요청을 보내는 부분
+  return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post("/user/login/", loginData);
 }
 
-function login() {
+function login(action) {
+  var result;
   return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function login$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
           _context.prev = 0;
           _context.next = 3;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["delay"])(2000);
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["call"])(loginAPI, action.data);
 
         case 3:
-          _context.next = 5;
+          result = _context.sent;
+          _context.next = 6;
           return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
             // put는 dispatch랑 동일
-            type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN_SUCCESS"]
+            type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN_SUCCESS"],
+            data: result.data
           });
 
-        case 5:
-          _context.next = 11;
+        case 6:
+          _context.next = 12;
           break;
 
-        case 7:
-          _context.prev = 7;
+        case 8:
+          _context.prev = 8;
           _context.t0 = _context["catch"](0);
-          _context.next = 11;
+          _context.next = 12;
           return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["put"])({
             type: _reducers_user__WEBPACK_IMPORTED_MODULE_2__["LOG_IN_FAILURE"],
             error: _context.t0
           });
 
-        case 11:
+        case 12:
         case "end":
           return _context.stop();
       }
     }
-  }, _marked, null, [[0, 7]]);
+  }, _marked, null, [[0, 8]]);
 }
 
 function watchLogin() {
@@ -2528,7 +2528,7 @@ function watchLogin() {
 
 
 function signUpAPI(signUpData) {
-  return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post("http://localhost:3065/api/user/", signUpData);
+  return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post("/user/", signUpData);
 }
 
 function signUp(action) {
@@ -2584,7 +2584,9 @@ function watchSignUp() {
 } ///////////////////////////////////////////////////
 
 
-function logOutAPI() {}
+function logOutAPI() {
+  return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post("/user/logout/");
+}
 
 function logOut() {
   return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function logOut$(_context5) {
@@ -2593,7 +2595,7 @@ function logOut() {
         case 0:
           _context5.prev = 0;
           _context5.next = 3;
-          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["delay"])(2000);
+          return Object(redux_saga_effects__WEBPACK_IMPORTED_MODULE_1__["call"])(logOutAPI);
 
         case 3:
           _context5.next = 5;

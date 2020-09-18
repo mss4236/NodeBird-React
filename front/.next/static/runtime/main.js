@@ -7783,7 +7783,7 @@ function connect(options) {
       error.name = err.name;
       error.stack = err.stack; // __NEXT_DIST_DIR is provided by webpack
 
-      source_map_support_1.rewriteStacktrace(error, "C:\\Users\\mss42\\Desktop\\SNS React\\front\\.next");
+      source_map_support_1.rewriteStacktrace(error, "C:\\Users\\mss42\\Desktop\\NodeBird-React\\front\\.next");
       return error;
     }
   };
@@ -12003,12 +12003,12 @@ module.exports = function(module) {
 
 /***/ "./node_modules/object-assign/index.js":
 /*!***************************************************************************************************!*\
-  !*** delegated ./node_modules/object-assign/index.js from dll-reference dll_ca933de2d796338ed37e ***!
+  !*** delegated ./node_modules/object-assign/index.js from dll-reference dll_46916701fb300d1b1834 ***!
   \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_ca933de2d796338ed37e */ "dll-reference dll_ca933de2d796338ed37e"))("./node_modules/object-assign/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_46916701fb300d1b1834 */ "dll-reference dll_46916701fb300d1b1834"))("./node_modules/object-assign/index.js");
 
 /***/ }),
 
@@ -12418,12 +12418,12 @@ exports.encode = exports.stringify = __webpack_require__(/*! ./encode */ "./node
 
 /***/ "./node_modules/react-dom/index.js":
 /*!***********************************************************************************************!*\
-  !*** delegated ./node_modules/react-dom/index.js from dll-reference dll_ca933de2d796338ed37e ***!
+  !*** delegated ./node_modules/react-dom/index.js from dll-reference dll_46916701fb300d1b1834 ***!
   \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_ca933de2d796338ed37e */ "dll-reference dll_ca933de2d796338ed37e"))("./node_modules/react-dom/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_46916701fb300d1b1834 */ "dll-reference dll_46916701fb300d1b1834"))("./node_modules/react-dom/index.js");
 
 /***/ }),
 
@@ -12441,12 +12441,12 @@ module.exports = (__webpack_require__(/*! dll-reference dll_ca933de2d796338ed37e
 
 /***/ "./node_modules/react/index.js":
 /*!*******************************************************************************************!*\
-  !*** delegated ./node_modules/react/index.js from dll-reference dll_ca933de2d796338ed37e ***!
+  !*** delegated ./node_modules/react/index.js from dll-reference dll_46916701fb300d1b1834 ***!
   \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_ca933de2d796338ed37e */ "dll-reference dll_ca933de2d796338ed37e"))("./node_modules/react/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_46916701fb300d1b1834 */ "dll-reference dll_46916701fb300d1b1834"))("./node_modules/react/index.js");
 
 /***/ }),
 
@@ -13237,14 +13237,14 @@ module.exports = {
 
 /***/ }),
 
-/***/ "dll-reference dll_ca933de2d796338ed37e":
+/***/ "dll-reference dll_46916701fb300d1b1834":
 /*!*******************************************!*\
-  !*** external "dll_ca933de2d796338ed37e" ***!
+  !*** external "dll_46916701fb300d1b1834" ***!
   \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = dll_ca933de2d796338ed37e;
+module.exports = dll_46916701fb300d1b1834;
 
 /***/ })
 

@@ -113,7 +113,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _this = undefined,
-    _jsxFileName = "C:\\Users\\mss42\\Desktop\\SNS React\\front\\components\\PostCard.js";
+    _jsxFileName = "C:\\Users\\mss42\\Desktop\\NodeBird-React\\front\\components\\PostCard.js";
 
 
 
@@ -362,7 +362,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _this = undefined,
-    _jsxFileName = "C:\\Users\\mss42\\Desktop\\SNS React\\front\\components\\PostForm.js";
+    _jsxFileName = "C:\\Users\\mss42\\Desktop\\NodeBird-React\\front\\components\\PostForm.js";
 
 
 
@@ -875,7 +875,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "react-redux");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_3__);
 var _this = undefined,
-    _jsxFileName = "C:\\Users\\mss42\\Desktop\\SNS React\\front\\pages\\index.js";
+    _jsxFileName = "C:\\Users\\mss42\\Desktop\\NodeBird-React\\front\\pages\\index.js";
 
 // 메인 페이지
 
@@ -1285,7 +1285,7 @@ var reducer = function reducer() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\mss42\Desktop\SNS React\front\pages\index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! C:\Users\mss42\Desktop\NodeBird-React\front\pages\index.js */"./pages/index.js");
 
 
 /***/ }),

@@ -115,7 +115,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-redux */ "react-redux");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_6__);
 var _this = undefined,
-    _jsxFileName = "C:\\Users\\mss42\\Desktop\\SNS React\\front\\components\\AppLayout.js";
+    _jsxFileName = "C:\\Users\\mss42\\Desktop\\NodeBird-React\\front\\components\\AppLayout.js";
 
 // 레이아웃(고정)
 
@@ -300,7 +300,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _this = undefined,
-    _jsxFileName = "C:\\Users\\mss42\\Desktop\\SNS React\\front\\components\\LoginForm.js";
+    _jsxFileName = "C:\\Users\\mss42\\Desktop\\NodeBird-React\\front\\components\\LoginForm.js";
 
 
 
@@ -486,7 +486,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reducers/user */ "./reducers/user.js");
 var _this = undefined,
-    _jsxFileName = "C:\\Users\\mss42\\Desktop\\SNS React\\front\\components\\UserProfile.js";
+    _jsxFileName = "C:\\Users\\mss42\\Desktop\\NodeBird-React\\front\\components\\UserProfile.js";
 
 
 
@@ -514,51 +514,51 @@ var UserProfile = function UserProfile() {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 20,
-        columnNumber: 17
+        columnNumber: 13
       }
     }, "\uC9F9\uC9F9", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 22,
-        columnNumber: 21
+        columnNumber: 16
       }
-    }), 0), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    }), me.Posts.length), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       key: "followings",
       __self: _this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 25,
-        columnNumber: 17
+        columnNumber: 13
       }
     }, "\uD314\uB85C\uC789", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 27,
-        columnNumber: 21
+        columnNumber: 16
       }
-    }), 0), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    }), me.Followings.length), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       key: "follower",
       __self: _this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 30,
-        columnNumber: 17
+        columnNumber: 13
       }
     }, "\uD314\uB85C\uC6CC", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 32,
-        columnNumber: 21
+        columnNumber: 16
       }
-    }), 0)],
+    }), me.Followers.length)],
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 18,
-      columnNumber: 9
+      columnNumber: 7
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_1__["Card"].Meta, {
     avatar: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_1__["Avatar"], {
@@ -566,7 +566,7 @@ var UserProfile = function UserProfile() {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 37,
-        columnNumber: 32
+        columnNumber: 29
       }
     }, me.nickname[0]),
     title: me.nickname,
@@ -574,7 +574,7 @@ var UserProfile = function UserProfile() {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 37,
-      columnNumber: 13
+      columnNumber: 10
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
     type: "primary",
@@ -584,7 +584,7 @@ var UserProfile = function UserProfile() {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 38,
-      columnNumber: 13
+      columnNumber: 10
     }
   }, "\uB85C\uADF8\uC544\uC6C3"));
 };
@@ -1518,7 +1518,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux_saga__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(redux_saga__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _sagas__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../sagas */ "./sagas/index.js");
 var _this = undefined,
-    _jsxFileName = "C:\\Users\\mss42\\Desktop\\SNS React\\front\\pages\\_app.js";
+    _jsxFileName = "C:\\Users\\mss42\\Desktop\\NodeBird-React\\front\\pages\\_app.js";
 
 // pages가 next에서 사용하는 라우터 폴더, _app.js는 next에서 제공하는 공통부분(Layout)
 // Component를 props로 받는다 (pages에 있는 component들)
@@ -2466,7 +2466,10 @@ axios__WEBPACK_IMPORTED_MODULE_3___default.a.defaults.baseURL = "http://localhos
 
 function loginAPI(loginData) {
   // 서버에 요청을 보내는 부분
-  return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post("/user/login/", loginData);
+  return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post("/user/login/", loginData, {
+    withCredentials: true // 프론트와 백엔드에서 쿠키를 주고 받을 수 있는 설정, 프론트랑 백엔드 둘다 해줘야함
+
+  });
 }
 
 function login(action) {
